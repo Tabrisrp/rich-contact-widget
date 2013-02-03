@@ -1,0 +1,215 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Rich Contact Widget 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-19 13:34+0100\n"
+"PO-Revision-Date: 2012-12-19 14:34+0200\n"
+"Last-Translator: knaipa <aparserok@gmail.com>\n"
+"Language-Team: Rémy Perona <remperona@gmail.com>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2;plural=n>2;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: /Users/remy/Sites/rich-contact-widget\n"
+
+#: /Users/remy/Sites/rich-contact-widget/tags/0.2/rich-contact-widget.php:54
+#: /Users/remy/Sites/rich-contact-widget/tags/0.3/rich-contact-widget.php:58
+#: /Users/remy/Sites/rich-contact-widget/tags/0.4/rich-contact-widget.php:58
+#: /Users/remy/Sites/rich-contact-widget/tags/0.5/rich-contact-widget.php:61
+#: /Users/remy/Sites/rich-contact-widget/tags/0.6/rich-contact-widget.php:61
+#: /Users/remy/Sites/rich-contact-widget/tags/0.7/rich-contact-widget.php:62
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:98
+msgid "A contact widget enhanced with microdatas & microformats tags"
+msgstr "Виджет контактов с использованием микроформатов"
+
+#: /Users/remy/Sites/rich-contact-widget/tags/0.2/rich-contact-widget.php:158
+#: /Users/remy/Sites/rich-contact-widget/tags/0.3/rich-contact-widget.php:152
+#: /Users/remy/Sites/rich-contact-widget/tags/0.4/rich-contact-widget.php:152
+#: /Users/remy/Sites/rich-contact-widget/tags/0.5/rich-contact-widget.php:163
+#: /Users/remy/Sites/rich-contact-widget/tags/0.6/rich-contact-widget.php:168
+#: /Users/remy/Sites/rich-contact-widget/tags/0.7/rich-contact-widget.php:185
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:233
+msgid "Contact"
+msgstr "Контакты"
+
+#: /Users/remy/Sites/rich-contact-widget/tags/0.2/rich-contact-widget.php:167
+#: /Users/remy/Sites/rich-contact-widget/tags/0.3/rich-contact-widget.php:168
+#: /Users/remy/Sites/rich-contact-widget/tags/0.4/rich-contact-widget.php:168
+#: /Users/remy/Sites/rich-contact-widget/tags/0.5/rich-contact-widget.php:187
+#: /Users/remy/Sites/rich-contact-widget/tags/0.6/rich-contact-widget.php:177
+#: /Users/remy/Sites/rich-contact-widget/tags/0.7/rich-contact-widget.php:194
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:242
+msgid "Title :"
+msgstr "Название виджета:"
+
+#: /Users/remy/Sites/rich-contact-widget/tags/0.2/rich-contact-widget.php:171
+#: /Users/remy/Sites/rich-contact-widget/tags/0.3/rich-contact-widget.php:172
+#: /Users/remy/Sites/rich-contact-widget/tags/0.4/rich-contact-widget.php:172
+#: /Users/remy/Sites/rich-contact-widget/tags/0.5/rich-contact-widget.php:191
+#: /Users/remy/Sites/rich-contact-widget/tags/0.6/rich-contact-widget.php:181
+#: /Users/remy/Sites/rich-contact-widget/tags/0.7/rich-contact-widget.php:198
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:246
+msgid "Type :"
+msgstr "Тип:"
+
+#: /Users/remy/Sites/rich-contact-widget/tags/0.2/rich-contact-widget.php:173
+#: /Users/remy/Sites/rich-contact-widget/tags/0.3/rich-contact-widget.php:174
+#: /Users/remy/Sites/rich-contact-widget/tags/0.4/rich-contact-widget.php:174
+#: /Users/remy/Sites/rich-contact-widget/tags/0.5/rich-contact-widget.php:193
+#: /Users/remy/Sites/rich-contact-widget/tags/0.6/rich-contact-widget.php:183
+#: /Users/remy/Sites/rich-contact-widget/tags/0.7/rich-contact-widget.php:200
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:248
+msgid "Person"
+msgstr "Персона"
+
+#: /Users/remy/Sites/rich-contact-widget/tags/0.2/rich-contact-widget.php:175
+#: /Users/remy/Sites/rich-contact-widget/tags/0.3/rich-contact-widget.php:176
+#: /Users/remy/Sites/rich-contact-widget/tags/0.4/rich-contact-widget.php:176
+#: /Users/remy/Sites/rich-contact-widget/tags/0.5/rich-contact-widget.php:195
+#: /Users/remy/Sites/rich-contact-widget/tags/0.6/rich-contact-widget.php:185
+#: /Users/remy/Sites/rich-contact-widget/tags/0.7/rich-contact-widget.php:202
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:250
+msgid "Company"
+msgstr "Организация"
+
+#: /Users/remy/Sites/rich-contact-widget/tags/0.2/rich-contact-widget.php:177
+#: /Users/remy/Sites/rich-contact-widget/tags/0.3/rich-contact-widget.php:179
+#: /Users/remy/Sites/rich-contact-widget/tags/0.4/rich-contact-widget.php:179
+#: /Users/remy/Sites/rich-contact-widget/tags/0.5/rich-contact-widget.php:198
+#: /Users/remy/Sites/rich-contact-widget/tags/0.6/rich-contact-widget.php:188
+#: /Users/remy/Sites/rich-contact-widget/tags/0.7/rich-contact-widget.php:205
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:253
+msgid "Company name/Your name :"
+msgstr "Название организации/Ваше имя :"
+
+#: /Users/remy/Sites/rich-contact-widget/tags/0.2/rich-contact-widget.php:181
+#: /Users/remy/Sites/rich-contact-widget/tags/0.3/rich-contact-widget.php:183
+#: /Users/remy/Sites/rich-contact-widget/tags/0.4/rich-contact-widget.php:183
+#: /Users/remy/Sites/rich-contact-widget/tags/0.5/rich-contact-widget.php:202
+#: /Users/remy/Sites/rich-contact-widget/tags/0.6/rich-contact-widget.php:192
+#: /Users/remy/Sites/rich-contact-widget/tags/0.7/rich-contact-widget.php:209
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:257
+msgid "Activity/Job :"
+msgstr "Сфера деятельности :"
+
+#: /Users/remy/Sites/rich-contact-widget/tags/0.2/rich-contact-widget.php:185
+#: /Users/remy/Sites/rich-contact-widget/tags/0.3/rich-contact-widget.php:187
+#: /Users/remy/Sites/rich-contact-widget/tags/0.4/rich-contact-widget.php:187
+#: /Users/remy/Sites/rich-contact-widget/tags/0.5/rich-contact-widget.php:206
+#: /Users/remy/Sites/rich-contact-widget/tags/0.6/rich-contact-widget.php:196
+#: /Users/remy/Sites/rich-contact-widget/tags/0.7/rich-contact-widget.php:213
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:261
+msgid "Company address :"
+msgstr "Адрес:"
+
+#: /Users/remy/Sites/rich-contact-widget/tags/0.2/rich-contact-widget.php:189
+#: /Users/remy/Sites/rich-contact-widget/tags/0.3/rich-contact-widget.php:191
+#: /Users/remy/Sites/rich-contact-widget/tags/0.4/rich-contact-widget.php:191
+#: /Users/remy/Sites/rich-contact-widget/tags/0.5/rich-contact-widget.php:210
+#: /Users/remy/Sites/rich-contact-widget/tags/0.6/rich-contact-widget.php:200
+#: /Users/remy/Sites/rich-contact-widget/tags/0.7/rich-contact-widget.php:217
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:265
+msgid "Postal/ZIP code :"
+msgstr "Почтовый индекс:"
+
+#: /Users/remy/Sites/rich-contact-widget/tags/0.2/rich-contact-widget.php:193
+#: /Users/remy/Sites/rich-contact-widget/tags/0.3/rich-contact-widget.php:195
+#: /Users/remy/Sites/rich-contact-widget/tags/0.4/rich-contact-widget.php:195
+#: /Users/remy/Sites/rich-contact-widget/tags/0.5/rich-contact-widget.php:214
+#: /Users/remy/Sites/rich-contact-widget/tags/0.6/rich-contact-widget.php:204
+#: /Users/remy/Sites/rich-contact-widget/tags/0.7/rich-contact-widget.php:221
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:269
+msgid "City :"
+msgstr "Город:"
+
+#: /Users/remy/Sites/rich-contact-widget/tags/0.2/rich-contact-widget.php:197
+#: /Users/remy/Sites/rich-contact-widget/tags/0.3/rich-contact-widget.php:199
+#: /Users/remy/Sites/rich-contact-widget/tags/0.4/rich-contact-widget.php:199
+#: /Users/remy/Sites/rich-contact-widget/tags/0.5/rich-contact-widget.php:218
+#: /Users/remy/Sites/rich-contact-widget/tags/0.6/rich-contact-widget.php:208
+#: /Users/remy/Sites/rich-contact-widget/tags/0.7/rich-contact-widget.php:231
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:279
+msgid "Country :"
+msgstr "Страна:"
+
+#: /Users/remy/Sites/rich-contact-widget/tags/0.2/rich-contact-widget.php:201
+#: /Users/remy/Sites/rich-contact-widget/tags/0.3/rich-contact-widget.php:203
+#: /Users/remy/Sites/rich-contact-widget/tags/0.4/rich-contact-widget.php:203
+#: /Users/remy/Sites/rich-contact-widget/tags/0.5/rich-contact-widget.php:222
+#: /Users/remy/Sites/rich-contact-widget/tags/0.6/rich-contact-widget.php:212
+#: /Users/remy/Sites/rich-contact-widget/tags/0.7/rich-contact-widget.php:235
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:283
+msgid "Phone number :"
+msgstr "Номер телефона:"
+
+#: /Users/remy/Sites/rich-contact-widget/tags/0.2/rich-contact-widget.php:205
+#: /Users/remy/Sites/rich-contact-widget/tags/0.3/rich-contact-widget.php:207
+#: /Users/remy/Sites/rich-contact-widget/tags/0.4/rich-contact-widget.php:207
+#: /Users/remy/Sites/rich-contact-widget/tags/0.5/rich-contact-widget.php:226
+#: /Users/remy/Sites/rich-contact-widget/tags/0.6/rich-contact-widget.php:216
+#: /Users/remy/Sites/rich-contact-widget/tags/0.7/rich-contact-widget.php:239
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:287
+msgid "Email address :"
+msgstr "Электронка:"
+
+#: /Users/remy/Sites/rich-contact-widget/tags/0.5/rich-contact-widget.php:127
+#: /Users/remy/Sites/rich-contact-widget/tags/0.6/rich-contact-widget.php:132
+#: /Users/remy/Sites/rich-contact-widget/tags/0.7/rich-contact-widget.php:149
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:193
+msgid "Map for"
+msgstr "Карта для"
+
+#: /Users/remy/Sites/rich-contact-widget/tags/0.5/rich-contact-widget.php:230
+#: /Users/remy/Sites/rich-contact-widget/tags/0.6/rich-contact-widget.php:220
+#: /Users/remy/Sites/rich-contact-widget/tags/0.7/rich-contact-widget.php:243
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:291
+msgid "Show image map :"
+msgstr "Показывать карту:"
+
+#: /Users/remy/Sites/rich-contact-widget/tags/0.5/rich-contact-widget.php:232
+#: /Users/remy/Sites/rich-contact-widget/tags/0.6/rich-contact-widget.php:222
+#: /Users/remy/Sites/rich-contact-widget/tags/0.7/rich-contact-widget.php:245
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:293
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:308
+msgid "Yes"
+msgstr "Да"
+
+#: /Users/remy/Sites/rich-contact-widget/tags/0.5/rich-contact-widget.php:233
+#: /Users/remy/Sites/rich-contact-widget/tags/0.6/rich-contact-widget.php:223
+#: /Users/remy/Sites/rich-contact-widget/tags/0.7/rich-contact-widget.php:246
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:294
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:309
+msgid "No"
+msgstr "Нет"
+
+#: /Users/remy/Sites/rich-contact-widget/tags/0.5/rich-contact-widget.php:237
+#: /Users/remy/Sites/rich-contact-widget/tags/0.6/rich-contact-widget.php:227
+#: /Users/remy/Sites/rich-contact-widget/tags/0.7/rich-contact-widget.php:250
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:298
+msgid "Image map width (max 640px) :"
+msgstr "Ширина карты (640px макс)"
+
+#: /Users/remy/Sites/rich-contact-widget/tags/0.5/rich-contact-widget.php:241
+#: /Users/remy/Sites/rich-contact-widget/tags/0.6/rich-contact-widget.php:231
+#: /Users/remy/Sites/rich-contact-widget/tags/0.7/rich-contact-widget.php:254
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:302
+msgid "Image map height (max 640px) :"
+msgstr "Высота карты (640px макс)"
+
+#: /Users/remy/Sites/rich-contact-widget/tags/0.7/rich-contact-widget.php:226
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:274
+msgid "State :"
+msgstr "Штат/Область :"
+
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:188
+msgid "Download vCard"
+msgstr "Разрешать скачивать карточку vCard"
+
+#: /Users/remy/Sites/rich-contact-widget/trunk/rich-contact-widget.php:306
+msgid "Show vCard download link :"
+msgstr "Показывать ссылку на карточку vCard"
