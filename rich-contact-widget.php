@@ -3,7 +3,7 @@
 Plugin Name: Rich Contact Widget
 Plugin URI: http://remyperona.fr/rich-contact-widget/
 Description: A simple contact widget enhanced with microdatas & microformats tags
-Version: 1.2
+Version: 1.2.1
 Author: Rémy Perona
 Author URI: http://remyperona.fr
 License: GPL2
@@ -132,7 +132,7 @@ class RC_Widget extends WP_Widget {
 				$widget_output .= '<li class="fn ' . $org . '" itemprop="name"><strong>' . $instance['name'] . '</strong></li>';
 			if ( !empty( $instance['activity'] ) )
 				$widget_output .= '<li itemprop="' . $activity . '">' . $instance['activity'] . '</li>';
-			$widget_output .= '<ul class="adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">';
+			$widget_output .= '<li><ul class="adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">';
 				if ( !empty( $instance['address'] ) ) {
 					$widget_output .= '<li class="street-address" itemprop="streetAddress">' . $instance['address'] . '</li>';
 					}
@@ -162,7 +162,7 @@ class RC_Widget extends WP_Widget {
 				if ( !empty( $instance['country'] ) ) {
 					$widget_output .= '<li class="country-name" itemprop="addressCountry">' . $instance['country'] . '</li>';
 				}
-			$widget_output .= '</ul>';
+			$widget_output .= '</ul></li>';
 			if ( !empty( $instance['phone'] ) ) {
 				$widget_output .= '<li class="tel" itemprop="telephone">';
 
@@ -185,7 +185,7 @@ class RC_Widget extends WP_Widget {
 
 		$widget_output .= '</ul>';
 		if ( $instance['map'] == 1 ) {
-    		$widget_output .= '<a href="http://mapof.it/'. $encoded_map_adress . '"><img src="http://maps.googleapis.com/maps/api/staticmap?center=' . $encoded_map_adress . '&zoom=15&size=' . $instance['map_width'] . 'x' . $instance['map_height'] . '&sensor=false&markers=' . $encoded_map_adress . '" alt="' . __('Map for', 'rich_contact-widget') . ' ' . $map_adress . '" width="' . $instance['map_width'] . '" height="' . $instance['map_height'] . '"></a>';
+    		$widget_output .= '<a href="http://mapof.it/'. $encoded_map_adress . '"><img src="http://maps.googleapis.com/maps/api/staticmap?center=' . $encoded_map_adress . '&amp;zoom=15&amp;size=' . $instance['map_width'] . 'x' . $instance['map_height'] . '&amp;sensor=false&amp;markers=' . $encoded_map_adress . '" alt="' . __('Map for', 'rich_contact-widget') . ' ' . $map_adress . '" width="' . $instance['map_width'] . '" height="' . $instance['map_height'] . '"></a>';
         }
 		$widget_output = apply_filters( 'rc_widget_output', $widget_output, $instance );
 		echo $widget_output;
@@ -321,4 +321,3 @@ add_action( 'widgets_init', 'rcw_register_widget' );
 
 // Loading languages for i18n
 load_plugin_textdomain('rich-contact-widget', false, basename( dirname( __FILE__ ) ) . '/languages' );
-?>

@@ -36,6 +36,9 @@ Credits for translation :
 
 # Changelog
 
+## 1.2.1
+* Some HTML fixes (Thanks to Julien Maury @TweetPressFr)
+
 ## 1.2
 * Undefined variable fix
 * Added Slovak translation
