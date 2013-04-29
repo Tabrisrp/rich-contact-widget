@@ -3,7 +3,7 @@
 Plugin Name: Rich Contact Widget
 Plugin URI: http://remyperona.fr/rich-contact-widget/
 Description: A simple contact widget enhanced with microdatas & microformats tags
-Version: 1.2.1
+Version: 1.3
 Author: Rémy Perona
 Author URI: http://remyperona.fr
 License: GPL2
@@ -80,7 +80,21 @@ class RC_Widget extends WP_Widget {
 			)
 		);
 		return $widget_keys;
-	} 
+	}
+
+	public function types_options( $types_array, $count, $type ) {
+    	$count++;
+    	$types_option = '';
+    	foreach ( $types_array as $key => $value ) {
+        	if ( !is_array( $value ) ) {
+            	$types_option .= '<option value="'. $value . '" ' . selected( $type , $value, false ) . '>' . str_repeat( '-', $count ) . ' ' . $value . '</option>';
+            } else { 
+                $types_option .= '<option value="' . $key . '" ' . selected( $type , $key, false ) . '>' . str_repeat( '-', $count ) . ' ' . $key . '</option>';
+                $types_option .= $this->types_options( $value, $count, $type );
+            }
+        }
+    return $types_option;
+	}
 
 	/**
 	 * Register widget with WordPress.
@@ -108,12 +122,10 @@ class RC_Widget extends WP_Widget {
 		echo $before_widget;
 		if ( ! empty( $title ) )
 			echo $before_title . $title . $after_title;
-		if ( $instance['type'] == 'person' ) {
-			$type = 'Person';
+		if ( $instance['type'] == 'Person' ) {
 			$activity = 'jobTitle';
 			$org = '';
 		} else {
-			$type = apply_filters( 'rc_widget_type', 'Corporation' );
 			$activity = 'description';
 			$org = ' org';
 		}
@@ -127,7 +139,7 @@ class RC_Widget extends WP_Widget {
 		$encoded_map_adress = str_replace( ' ', '+', $map_adress );
 		}
 		
-		$widget_output = '<ul class="vcard" itemscope itemtype="http://schema.org/'. $type. '">';
+		$widget_output = '<ul class="vcard" itemscope itemtype="http://schema.org/'. $instance['type'] . '">';
 			if ( !empty( $instance['name'] ) )
 				$widget_output .= '<li class="fn ' . $org . '" itemprop="name"><strong>' . $instance['name'] . '</strong></li>';
 			if ( !empty( $instance['activity'] ) )
@@ -238,11 +250,180 @@ class RC_Widget extends WP_Widget {
 		<input class="widefat" id="' . $this->get_field_id( 'title' ) . '" name="' . $this->get_field_name( 'title' ) . '" type="text" value="' . esc_attr( $title ) . '" />
 		</p>';
 		$widget_form_output .= '<p>
-			' . __('Type :', 'rich-contact-widget')  .'<br />
-			<input id="' . $this->get_field_id( 'person' ) . '" name="' . $this->get_field_name( 'type' ) . '" type="radio" value="person" ' . checked( $type, 'person', false ) . ' />
-			<label for="' . $this->get_field_id( 'person' ) . '">' . __('Person', 'rich-contact-widget') . '<br />
-			<input id="' . $this->get_field_id( 'company' ) . '" name="'  . $this->get_field_name( 'type' )  . '" type="radio" value="company" ' . checked( $type, 'company', false ) . ' />
-			<label for="' . $this->get_field_id( 'company' ) . '">' . __('Company', 'rich-contact-widget') . '
+			<select name="' . $this->get_field_name( 'type' ) . '">
+			 <option value="">' . __( 'Choose a type', 'rich-contact-widget ') . '</option>';
+			 $types = apply_filters( 'rc_schema_types', array(
+	       'Person',
+	       'Corporation',
+	       'EducationalOrganization' => array(
+	           'CollegeOrUniversity',
+	           'ElementarySchool',
+	           'HighSchool',
+	           'MiddleSchool',
+	           'PreSchool',
+	           'School'
+	       ),
+	       'GovernmentOrganization',
+	       'LocalBusiness' => array(
+	           'AnimalShelter',
+	           'AutomotiveBusiness' => array(
+	               'AutoBodyShop',
+	               'AutoDealer',
+	               'AutoPartsStore',
+	               'AutoRental',
+	               'AutoRepair',
+	               'AutoWash',
+	               'GasStation',
+	               'MotorcycleDealer',
+	               'MotorcycleRepair'
+	           ),
+	           'ChildCare',
+	           'DryCleaningOrLaundry',
+	           'EmergencyService' => array(
+	               'FireStation',
+	               'Hospital',
+	               'PoliceStation'
+	           ),
+	           'EmploymentAgency',
+	           'EntertainmentBusiness' => array(
+	               'AdultEntertainment',
+	               'AmusementPark',
+	               'ArtGallery',
+	               'Casino',
+	               'ComedyClub',
+	               'MovieTheater',
+	               'NightClub',
+	           ),
+	           'FinancialService' => array(
+	               'AccountingService',
+	               'AutomatedTeller',
+	               'BankOrCreditUnion',
+	               'InsuranceAgency'
+	           ),
+	           'FoodEstablishment' => array(
+	               'Bakery',
+	               'BarOrPub',
+	               'Brewery',
+	               'CafeOrCoffeeShop',
+	               'FastFoodRestaurant',
+	               'IceCreamShop',
+	               'Restaurant',
+	               'Winery'
+	           ),
+	           'GovernmentOffice' => array(
+	               'PostOffice'
+	           ),
+	           'HealthAndBeautyBusiness' => array(
+	               'BeautySalon',
+	               'DaySpa',
+	               'HairSalon',
+	               'HealthClub',
+	               'NailSalon',
+	               'TatooParlor'
+	           ),
+	           'HomeAndConstructionBusiness' => array(
+	               'Electrician',
+	               'GeneralContractor',
+	               'HVACBusiness',
+	               'HousePainter',
+	               'LockSmith',
+	               'MovingCompany',
+	               'Plumber',
+	               'RoofingContractor'
+	           ),
+	           'InternetCafe',
+	           'Library',
+	           'LodgingBusiness' => array(
+	               'BedAndBreakfast',
+	               'Hostel',
+	               'Hotel',
+	               'Motel'
+	           ),
+	           'MedicalOrganization' => array(
+	               'Dentist',
+	               'DiagnosticLab',
+	               'Hospital',
+	               'MedicalClinic',
+	               'Optician',
+	               'Pharmacy',
+	               'Physician',
+	               'VeterinaryCare'
+	           ),
+	           'ProfessionalService' => array(
+	               'AccountingService',
+	               'Attorney',
+	               'Dentist',
+	               'Electrician',
+	               'GeneralContractor',
+	               'HousePainter',
+	               'Locksmith',
+	               'Notary',
+	               'Plumber',
+	               'RoofingContractor'
+	           ),
+	           'RadioStation',
+	           'RealEstateAgent',
+	           'RecyclingCenter',
+	           'SelfStorage',
+	           'ShoppingCenter',
+	           'SportsActivityLocation' => array(
+	               'BowlingAlley',
+	               'ExerciseGym',
+	               'GolfCourse',
+	               'HealthClub',
+	               'PublicSwimmingPool',
+	               'SkiResort',
+	               'SportsClub',
+	               'StadiumOrArena',
+	               'TennisComplex'
+	           ),
+	           'Store' => array(
+	               'AutoPartsStore',
+	               'BikeStore',
+	               'BookStore',
+	               'ClothingStore',
+	               'ComputerStore',
+	               'ConvenienceStore',
+	               'DepartmentStore',
+	               'ElectronicsStore',
+	               'Florist',
+	               'FurnitureStore',
+	               'GardenStore',
+	               'GroceryStore',
+	               'HardwareStore',
+	               'HobbyShop',
+	               'HomeGoodsStore',
+	               'JewelryStore',
+	               'LiquorStore',
+	               'MensClothingStore',
+	               'MobilePhoneStore',
+	               'MovieRentalStore',
+	               'MusicStore',
+	               'OfficeEquipmentStore',
+	               'OutletStore',
+	               'PawnShop',
+	               'PetStore',
+	               'ShoeStore',
+	               'SportingGoodsStore',
+	               'TireShop',
+	               'ToyStore',
+	               'WholesaleStore'
+	           ),
+	           'TelevisionStation',
+	           'TouristInformationCenter',
+	           'TravelAgency'
+	       ),
+	       'NGO',
+	       'PerformingGroup' => array(
+	           'DanceGroup',
+	           'MusicGroup',
+	           'TheaterGroup'
+	       ),
+	       'SportsTeam'
+	       )
+	   );
+	   $widget_form_output .= $this->types_options( $types, -1, $instance['type'] );
+        $widget_form_output .= '</select>
 		</p>';
 		$widget_form_output .= '<p>
 			<label for="' . $this->get_field_id( 'name' ) . '">' . __( 'Company name/Your name :', 'rich-contact-widget' ) . '</label>
