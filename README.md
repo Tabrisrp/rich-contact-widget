@@ -35,9 +35,12 @@ Credits for translation :
 ## How to change the output using the filters ?
 
 *   You can add or remove fields in the contact widget output and widget form with the `rc_widget_keys`, `rc_widget_form_ouput` and `rc_widget_output` filters.
-*   You can change the Company type of the schema.org itemtype to better fit your business with the `rc_widget_type` filter. Values could be Organization, LocalBusiness, etc.
+*   You can add more types of the schema.org itemtype to better fit your business with the `rc_schema_types` filter.
 
 # Changelog
+
+## 1.3
+* Replaced the radio buttons for company type by an extensive select menu containing all schema.org business types.
 
 ## 1.2.1
 * Some HTML fixes (Thanks to Julien Maury @TweetPressFr)
