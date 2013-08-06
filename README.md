@@ -39,6 +39,11 @@ Credits for translation :
 
 # Changelog
 
+## 1.3.1
+* bugfix : added defaults values if width and height fields for the map are empty or the values are above 640
+* changed markup for the address
+* added support for multilines address
+
 ## 1.3
 * Replaced the radio buttons for company type by an extensive select menu containing all schema.org business types.
 
