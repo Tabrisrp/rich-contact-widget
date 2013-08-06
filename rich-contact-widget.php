@@ -3,7 +3,7 @@
 Plugin Name: Rich Contact Widget
 Plugin URI: http://remyperona.fr/rich-contact-widget/
 Description: A simple contact widget enhanced with microdatas & microformats tags
-Version: 1.3
+Version: 1.3.1
 Author: Rémy Perona
 Author URI: http://remyperona.fr
 License: GPL2
@@ -129,27 +129,17 @@ class RC_Widget extends WP_Widget {
 			$activity = 'description';
 			$org = ' org';
 		}
-
-		if ( $instance['map'] == 1 ) {
-		  if (get_locale() == 'en_US')
-		      $map_adress = $instance['address'] . ' ' . $instance['city'] . ' ' . $instance['state'] . ' ' . $instance['postal_code'] . ' ' . $instance['country'];
-		  else
-		      $map_adress = $instance['address'] . ' ' . $instance['postal_code'] . ' ' . $instance['city'] . ' ' . $instance['country'];
-
-		$encoded_map_adress = str_replace( ' ', '+', $map_adress );
-		}
 		
 		$widget_output = '<ul class="vcard" itemscope itemtype="http://schema.org/'. $instance['type'] . '">';
 			if ( !empty( $instance['name'] ) )
 				$widget_output .= '<li class="fn ' . $org . '" itemprop="name"><strong>' . $instance['name'] . '</strong></li>';
 			if ( !empty( $instance['activity'] ) )
 				$widget_output .= '<li itemprop="' . $activity . '">' . $instance['activity'] . '</li>';
-			$widget_output .= '<li><ul class="adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">';
+			$widget_output .= '<li><div class="adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">';
 				if ( !empty( $instance['address'] ) ) {
-					$widget_output .= '<li class="street-address" itemprop="streetAddress">' . $instance['address'] . '</li>';
+					$widget_output .= '<span class="street-address" itemprop="streetAddress">' . nl2br( $instance['address'] ) . '</span><br>';
 					}
 				if ( !empty( $instance['postal_code'] ) || ( get_locale() == 'en_US' && !empty( $instance['state'] ) ) ||!empty( $instance['city'] ) ) {
-					$widget_output.= '<li>';
 					if ( get_locale() == 'en_US' ) {
     					if ( !empty( $instance['city'] ) ) {
         					$widget_output .= '<span class="locality" itemprop="addressLocality">' . $instance['city'] . '</span>,&nbsp;';
@@ -158,7 +148,7 @@ class RC_Widget extends WP_Widget {
             				$widget_output .= '<span class="region" itemprop="addressRegion">' . $instance['state'] . '</span>&nbsp;';
                         }
                         if ( !empty( $instance['postal_code'] ) ) {
-                            $widget_output .= '<span class="postal-code" itemprop="postalCode">' . $instance['postal_code'] . '</span>';
+                            $widget_output .= '<span class="postal-code" itemprop="postalCode">' . $instance['postal_code'] . '</span><br>';
 	  					}
 					}
 					else {
@@ -166,15 +156,14 @@ class RC_Widget extends WP_Widget {
 					   	   $widget_output .= '<span class="postal-code" itemprop="postalCode">' . $instance['postal_code'] . '</span>&nbsp;';
 					   }
 					   if ( !empty( $instance['city'] ) ) {
-					   	   $widget_output .= '<span class="locality" itemprop="addressLocality">' . $instance['city'] . '</span>';
+					   	   $widget_output .= '<span class="locality" itemprop="addressLocality">' . $instance['city'] . '</span><br>';
 					   }
 					}
-					$widget_output .= '</li>';
 				}
 				if ( !empty( $instance['country'] ) ) {
-					$widget_output .= '<li class="country-name" itemprop="addressCountry">' . $instance['country'] . '</li>';
+					$widget_output .= '<span class="country-name" itemprop="addressCountry">' . $instance['country'] . '</span>';
 				}
-			$widget_output .= '</ul></li>';
+			$widget_output .= '</div></li>';
 			if ( !empty( $instance['phone'] ) ) {
 				$widget_output .= '<li class="tel" itemprop="telephone">';
 
@@ -197,6 +186,29 @@ class RC_Widget extends WP_Widget {
 
 		$widget_output .= '</ul>';
 		if ( $instance['map'] == 1 ) {
+            if ( empty( $instance['map_width'] ) ) {
+                $instance['map_width'] = 200;
+            }
+
+            if ( $instance['map_width'] > 640 ) {
+                $instance['map_width'] = 640;
+            }
+
+            if ( empty( $instance['map_height'] ) ) {
+                $instance['map_height'] = 200;
+            }
+
+            if ( $instance['map_height'] > 640 ) {
+                $instance['map_height'] = 640;
+            }
+
+            if (get_locale() == 'en_US')
+		      $map_adress = $instance['address'] . ' ' . $instance['city'] . ' ' . $instance['state'] . ' ' . $instance['postal_code'] . ' ' . $instance['country'];
+		  else
+		      $map_adress = $instance['address'] . ' ' . $instance['postal_code'] . ' ' . $instance['city'] . ' ' . $instance['country'];
+
+		$encoded_map_adress = str_replace( ' ', '+', $map_adress );
+            
     		$widget_output .= '<a href="http://mapof.it/'. $encoded_map_adress . '"><img src="http://maps.googleapis.com/maps/api/staticmap?center=' . $encoded_map_adress . '&amp;zoom=15&amp;size=' . $instance['map_width'] . 'x' . $instance['map_height'] . '&amp;sensor=false&amp;markers=' . $encoded_map_adress . '" alt="' . __('Map for', 'rich_contact-widget') . ' ' . $map_adress . '" width="' . $instance['map_width'] . '" height="' . $instance['map_height'] . '"></a>';
         }
 		$widget_output = apply_filters( 'rc_widget_output', $widget_output, $instance );

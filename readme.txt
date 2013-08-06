@@ -3,12 +3,12 @@ Contributors: tabrisrp
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=6V74BBTNMWW38&lc=FR&item_name=R%c3%a9my%20Perona&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted
 Tags: microdata, microformats, widget, contact, rich snippets, local seo, hcard, schema.org
 Requires at least: 3.2.1
-Tested up to: 3.5.1
-Stable tag: 1.3
+Tested up to: 3.6
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This contact widget for WordPress comes with enhanced markup for microdatas & microformats, so that search engines can use it in their search results.
+A simple contact widget enhanced with microdatas & microformats tags 
 
 == Description ==
 
@@ -47,6 +47,11 @@ Credits for translation :
 *   You can add more types of the schema.org itemtype to better fit your business with the `rc_schema_types` filter.
 
 == Changelog ==
+
+= 1.3.1 =
+* bugfix : added defaults values if width and height fields for the map are empty or the values are above 640
+* changed markup for the address
+* added support for multilines address
 
 = 1.3 =
 * Replaced the radio buttons for company type by an extensive select menu containing all schema.org business types.
