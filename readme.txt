@@ -49,7 +49,7 @@ Credits for translation :
 == Changelog ==
 
 = 1.4 =
-* The plugin now creates a kml file and an associated sitemap file
+* The plugin now creates a kml file and an associated sitemap file (You'll have to re-save the data to create the files)
 * If you have WordPress SEO by Yoast installed, it will add the sitemap to the sitemap index created by the plugin
 
 = 1.3.2 =
