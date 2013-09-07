@@ -3,7 +3,7 @@
 Plugin Name: Rich Contact Widget
 Plugin URI: http://remyperona.fr/rich-contact-widget/
 Description: A simple contact widget enhanced with microdatas & microformats tags
-Version: 1.3.1
+Version: 1.4
 Author: Rémy Perona
 Author URI: http://remyperona.fr
 License: GPL2
@@ -27,14 +27,14 @@ Text Domain: rich-contact-widget
  * Class for vcard creation & saving
  */
 class VCF {
-    var $data;
-    var $name;
-    function VCF($data) {
+    protected $vcard_data;
+    protected $name;
+    public function __construct( $data ) {
         $this->name = strtolower( remove_accents( trim( str_replace( ' ', '', $data['name'] ) ) ) );
-        $this->data = "BEGIN:VCARD\nVERSION:3.0\nREV:".date("Ymd\THis\Z")."\nFN:".$data['name']."\nTITLE:".$data['activity']."\nADR;WORK:;;".$data['address'].";".$data['city'].";;".$data['postal_code'].";".$data['country']."\nTEL;WORK;VOICE:".$data['phone']."\nEMAIL;WORK;INTERNET:".$data['email']."\nURL;WORK:". home_url() ."\nEND:VCARD";
+        $this->vcard_data = "BEGIN:VCARD\nVERSION:3.0\nREV:".date("Ymd\THis\Z")."\nFN:".$data['name']."\nTITLE:".$data['activity']."\nADR;WORK:;;".$data['address'].";".$data['city'].";;".$data['postal_code'].";".$data['country']."\nTEL;WORK;VOICE:".$data['phone']."\nEMAIL;WORK;INTERNET:".$data['email']."\nURL;WORK:". home_url() ."\nEND:VCARD";
     }
 
-    function save() {
+    public function save() {
         $url = wp_nonce_url('widgets.php?editwidget=rc_widget-2','rich-contact-widget');
         if (false === ($creds = request_filesystem_credentials($url, '', false, false, null) ) ) {
             return; // stop processing here
@@ -47,8 +47,92 @@ class VCF {
         global $wp_filesystem;
         $wp_filesystem->put_contents(
             $upload_dir['basedir'] . '/'. $this->name . '.vcf',
-            $this->data
+            $this->vcard_data
         );
+    }
+}
+
+class RP_Geositemap {
+    protected $kml_data;
+    protected $sitemap_data;
+    protected $name;
+    protected $coords;
+    protected $complete_address;
+
+    public function __construct( $data ) {
+        $upload_dir = wp_upload_dir();
+        $this->name = strtolower( remove_accents( trim( str_replace( ' ', '', $data['name'] ) ) ) );
+        $complete_address = $data['address'] . ' ' . $data['city'] . ' ' . $data['country'];
+        $coords = $this->get_coords( $complete_address );
+        $this->kml_data = '<?xml version="1.0" encoding="UTF-8"?>
+            <kml xmlns="http://www.opengis.net/kml/2.2">
+              <Placemark>
+                <name>' . $data['name'] . '</name>
+                <description>' . $data['activity'] . '</description>
+                <Point>
+                  <coordinates>' . $coords['lat'] . ',' . $coords['lon'] . '</coordinates>
+                </Point>
+              </Placemark>
+            </kml>';
+        
+        $this->sitemap_data = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+                        <url>
+                           <loc>' . $upload_dir['baseurl'] . '/' . $this->name . '.kml</loc>
+                        </url>
+                        
+                        </urlset>';
+    }
+
+    public function save() {
+        $upload_dir = wp_upload_dir();
+        $url = wp_nonce_url('widgets.php?editwidget=rc_widget-2','rich-contact-widget');
+        if (false === ($creds = request_filesystem_credentials($url, '', false, false, null) ) ) {
+            return; // stop processing here
+        }
+        if ( ! WP_Filesystem($creds) ) {
+            request_filesystem_credentials($url, '', true, false, null);
+            return;
+        }
+        global $wp_filesystem;
+        $wp_filesystem->put_contents(
+            $upload_dir['basedir'] . '/' . $this->name . '.kml',
+            $this->kml_data
+        );
+        $wp_filesystem->put_contents(
+            $upload_dir['basedir'] . '/rc_geositemap.xml',
+            $this->sitemap_data
+        );
+    }
+
+    private function get_coords( $address ) {
+    	$coords=array();
+        $base_url="http://maps.googleapis.com/maps/api/geocode/xml?";
+        // ajouter &region=FR si ambiguité (lieu de la requete pris par défaut)
+        $request_url = $base_url . "address=" . urlencode($address).'&sensor=false';
+        if( ini_get('allow_url_fopen') ) {
+            $xml = simplexml_load_file($request_url) or die("url not loading");
+        } else {
+            $curl = curl_init($request_url);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            $data = curl_exec($request_url);
+            $xml = simplexml_load_string($data);
+        }
+        //print_r($xml);
+        $coords['lat'] = $coords['lon'] = '';
+        $coords['status'] = $xml->status ;
+        if($coords['status']=='OK') {
+            $coords['lat'] = $xml->result->geometry->location->lat ;
+            $coords['lon'] = $xml->result->geometry->location->lng ;
+        }
+        return $coords;
+	}
+
+    public function add_to_wpseo_sitemap() {
+        $upload_dir = wp_upload_dir();
+        return '<sitemap>
+        <loc>' . $upload_dir['baseurl'] . '/rc_geositemap.xml</loc>
+        <lastmod>1970-01-01T00:00:00+00:00</lastmod>
+        </sitemap>';
     }
 }
 
@@ -95,7 +179,7 @@ class RC_Widget extends WP_Widget {
         }
     return $types_option;
 	}
-
+    
 	/**
 	 * Register widget with WordPress.
 	 */
@@ -236,6 +320,9 @@ class RC_Widget extends WP_Widget {
 		  $vcf = new VCF( $new_instance );
 		  $vcf->save();
 		  }
+
+        $geositemap = new RP_Geositemap( $new_instance );
+        $geositemap->save();
 		return $new_instance;
 	}
 
@@ -511,6 +598,7 @@ function rcw_register_widget() {
 
 // init RC_Widget widget
 add_action( 'widgets_init', 'rcw_register_widget' );
+add_filter( 'wpseo_sitemap_index', array( 'RP_Geositemap', 'add_to_wpseo_sitemap' ) );
 
 // Loading languages for i18n
 load_plugin_textdomain('rich-contact-widget', false, basename( dirname( __FILE__ ) ) . '/languages' );

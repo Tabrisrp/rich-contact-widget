@@ -39,6 +39,13 @@ Credits for translation :
 
 # Changelog
 
+## 1.4
+* The plugin now creates a kml file and an associated sitemap file
+* If you have WordPress SEO by Yoast installed, it will add the sitemap to the sitemap index created by the plugin
+
+## 1.3.2
+* Added Spanish translation by http://wordpress.org/support/profile/cris_gn
+
 ## 1.3.1
 * bugfix : added defaults values if width and height fields for the map are empty or the values are above 640
 * changed markup for the address
