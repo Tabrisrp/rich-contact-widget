@@ -8,11 +8,11 @@ Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A simple contact widget enhanced with microdatas & microformats tags 
+A simple contact widget enhanced with microdatas & microformats tags for your local SEO
 
 == Description ==
 
-This contact widget comes with enhanced markup for microdatas & microformats, so that search engines can use it in their search results. They can help display contact informations about your business or yourself below your website in search results, and even a map with your location.
+This contact widget comes with enhanced markup for microdatas & microformats, so that search engines can use it in their search results. They can help display contact information about your business or yourself below your website in search results, and even a map with your location, to improve your local SEO.
 
 The telephone & email are linked so that visitors can click on it and make a call (through mobile or skype) or send a mail from their computer or their mobile devices.
 
