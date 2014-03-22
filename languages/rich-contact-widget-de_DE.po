@@ -1,0 +1,116 @@
+# Copyright (C) 2012 Rich Contact Widget
+# This file is distributed under the same license as the Rich Contact Widget package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Rich Contact Widget 0.5\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/rich-contact-widget\n"
+"POT-Creation-Date: 2012-08-03 23:10:11+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-03-12 11:51+0100\n"
+"Last-Translator: Patrick Niemann <niemann.patrick@gmail.com>\n"
+"Language-Team: Patrick Niemann <niemann.patrick@gmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: de_DE\n"
+"X-Generator: Poedit 1.5.5\n"
+
+#: rich-contact-widget.php:61
+msgid "A contact widget enhanced with microdatas & microformats tags"
+msgstr "Ein Kontakt Widget mit Microdata- & Microformat-Tags."
+
+#: rich-contact-widget.php:127
+msgid "Map for"
+msgstr "Karte für"
+
+#: rich-contact-widget.php:163
+msgid "Contact"
+msgstr "Kontakt"
+
+#: rich-contact-widget.php:187
+msgid "Title :"
+msgstr "Titel:"
+
+#: rich-contact-widget.php:191
+msgid "Type :"
+msgstr "Typ:"
+
+#: rich-contact-widget.php:193
+msgid "Person"
+msgstr "Person"
+
+#: rich-contact-widget.php:195
+msgid "Company"
+msgstr "Firma"
+
+#: rich-contact-widget.php:198
+msgid "Company name/Your name :"
+msgstr "Firmenname/Dein Name:"
+
+#: rich-contact-widget.php:202
+msgid "Activity/Job :"
+msgstr "Tätigkeit/Beruf:"
+
+#: rich-contact-widget.php:206
+msgid "Company address :"
+msgstr "Firmenadresse:"
+
+#: rich-contact-widget.php:210
+msgid "Postal/ZIP code :"
+msgstr "Postleitzahl:"
+
+#: rich-contact-widget.php:214
+msgid "City :"
+msgstr "Stadt:"
+
+#: rich-contact-widget.php:218
+msgid "Country :"
+msgstr "Land:"
+
+#: rich-contact-widget.php:222
+msgid "Phone number :"
+msgstr "Telefon:"
+
+#: rich-contact-widget.php:226
+msgid "Email address :"
+msgstr "E-Mail:"
+
+#: rich-contact-widget.php:230
+msgid "Show image map :"
+msgstr "Zeige Karte:"
+
+#: rich-contact-widget.php:232
+msgid "Yes"
+msgstr "Ja"
+
+#: rich-contact-widget.php:233
+msgid "No"
+msgstr "Nein"
+
+#: rich-contact-widget.php:237
+msgid "Image map width (max 640px) :"
+msgstr "Kartenbreite (max. 640px):"
+
+#: rich-contact-widget.php:241
+msgid "Image map height (max 640px) :"
+msgstr "Kartenhöhe (max. 640px):"
+
+#. Plugin Name of the plugin/theme
+msgid "Rich Contact Widget"
+msgstr "Rich Contact Widget"
+
+#. Plugin URI of the plugin/theme
+msgid "http://remyperona.fr/rich-contact-widget/"
+msgstr "http://remyperona.fr/rich-contact-widget/"
+
+#. Description of the plugin/theme
+msgid "A simple contact widget enhanced with microdatas & microformats tags"
+msgstr "Ein einfaches Kontakt Widget mit Microdata- & Microformat-Tags."
+
+#. Author of the plugin/theme
+msgid "Rémy Perona"
+msgstr "Rémy Perona"
+
+#. Author URI of the plugin/theme
+msgid "http://remyperona.fr"
+msgstr "http://remyperona.fr"
