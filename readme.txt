@@ -3,8 +3,8 @@ Contributors: tabrisrp
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=6V74BBTNMWW38&lc=FR&item_name=R%c3%a9my%20Perona&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted
 Tags: microdata, microformats, widget, contact, rich snippets, local seo, hcard, schema.org
 Requires at least: 3.2.1
-Tested up to: 3.7
-Stable tag: 1.4
+Tested up to: 3.9
+Stable tag: 1.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ A simple contact widget enhanced with microdatas & microformats tags for your lo
 
 == Description ==
 
-This contact widget comes with enhanced markup for microdatas & microformats, so that search engines can use it in their search results. They can help display contact information about your business or yourself below your website in search results, and even a map with your location, to improve your local SEO.
+This contact widget comes with microdatas & microformats markup, so that search engines can use it in their search results. They can help display contact information about your business or yourself below your website in search results, and even a map with your location, to improve your local SEO.
 
 The telephone & email are linked so that visitors can click on it and make a call (through mobile or skype) or send a mail from their computer or their mobile devices.
 
@@ -47,6 +47,13 @@ Credits for translation :
 *   You can add more types of the schema.org itemtype to better fit your business with the `rc_schema_types` filter.
 
 == Changelog ==
+
+= 1.4.2 =
+* Compatibility test with WP 3.9 widget customizer
+* Small fixes
+
+= 1.4.1 =
+* Added German translation (Thanks to Patrick Niemann)
 
 = 1.4 =
 * The plugin now creates a kml file and an associated sitemap file (You'll have to re-save the data to create the files)

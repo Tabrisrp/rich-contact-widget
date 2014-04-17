@@ -3,7 +3,7 @@
 Plugin Name: Rich Contact Widget
 Plugin URI: http://remyperona.fr/rich-contact-widget/
 Description: A simple contact widget enhanced with microdatas & microformats tags
-Version: 1.4
+Version: 1.4.2
 Author: Rémy Perona
 Author URI: http://remyperona.fr
 License: GPL2
@@ -350,7 +350,7 @@ class RC_Widget extends WP_Widget {
 		</p>';
 		$widget_form_output .= '<p>
 			<select name="' . $this->get_field_name( 'type' ) . '">
-			 <option value="">' . __( 'Choose a type', 'rich-contact-widget ') . '</option>';
+			 <option value="">' . __( 'Choose a type', 'rich-contact-widget') . '</option>';
 			 $types = apply_filters( 'rc_schema_types', array(
 	       'Person',
 	       'Corporation',
@@ -521,7 +521,7 @@ class RC_Widget extends WP_Widget {
 	       'SportsTeam'
 	       )
 	   );
-	   $widget_form_output .= $this->types_options( $types, -1, $instance['type'] );
+	   $widget_form_output .= $this->types_options( $types, -1, $type );
         $widget_form_output .= '</select>
 		</p>';
 		$widget_form_output .= '<p>
