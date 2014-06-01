@@ -1,0 +1,95 @@
+# Copyright (C) 2012 Rich Contact Widget
+# This file is distributed under the same license as the Rich Contact Widget package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Rich Contact Widget 0.5\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/rich-contact-widget\n"
+"POT-Creation-Date: 2012-08-03 23:10:11+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-05-22 13:34+0200\n"
+"Last-Translator: Michael Yunat <Michael.Yunat@gmail.com>\n"
+"Language-Team: http://getvoip.com/\n"
+"Language: uk_UA\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#: rich-contact-widget.php:61
+msgid "A contact widget enhanced with microdatas & microformats tags"
+msgstr "Контакт віджет посилюється з microdatas і мікроформатів теги"
+
+#: rich-contact-widget.php:127
+msgid "Map for"
+msgstr "Карта для"
+
+#: rich-contact-widget.php:163
+msgid "Contact"
+msgstr "Контакт"
+
+#: rich-contact-widget.php:187
+msgid "Title :"
+msgstr "Назва:"
+
+#: rich-contact-widget.php:191
+msgid "Type :"
+msgstr "Тип:"
+
+#: rich-contact-widget.php:193
+msgid "Person"
+msgstr "Людина"
+
+#: rich-contact-widget.php:195
+msgid "Company"
+msgstr "Компанія"
+
+#: rich-contact-widget.php:198
+msgid "Company name/Your name :"
+msgstr "Назва компанії/Ваше ім'я:"
+
+#: rich-contact-widget.php:202
+msgid "Activity/Job :"
+msgstr "Діяльність/Робота:"
+
+#: rich-contact-widget.php:206
+msgid "Company address :"
+msgstr "Адреса компанії:"
+
+#: rich-contact-widget.php:210
+msgid "Postal/ZIP code :"
+msgstr "Поштовий індекс:"
+
+#: rich-contact-widget.php:214
+msgid "City :"
+msgstr "Місто:"
+
+#: rich-contact-widget.php:218
+msgid "Country :"
+msgstr "Країна:"
+
+#: rich-contact-widget.php:222
+msgid "Phone number :"
+msgstr "Номер телефону:"
+
+#: rich-contact-widget.php:226
+msgid "Email address :"
+msgstr "Адреса електронної пошти:"
+
+#: rich-contact-widget.php:230
+msgid "Show image map :"
+msgstr "Показати карту зображення:"
+
+#: rich-contact-widget.php:232
+msgid "Yes"
+msgstr "Так"
+
+#: rich-contact-widget.php:233
+msgid "No"
+msgstr "Ні"
+
+#: rich-contact-widget.php:237
+msgid "Image map width (max 640px) :"
+msgstr "Карта Ширина зображення (макс. 640px):"
+
+#: rich-contact-widget.php:241
+msgid "Image map height (max 640px) :"
+msgstr "Карта Висота зображення (макс. 640px):"
