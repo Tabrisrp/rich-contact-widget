@@ -109,20 +109,15 @@ class RP_Geositemap {
         $base_url="http://maps.googleapis.com/maps/api/geocode/xml?";
         // ajouter &region=FR si ambiguité (lieu de la requete pris par défaut)
         $request_url = $base_url . "address=" . urlencode($address).'&sensor=false';
-        if( ini_get('allow_url_fopen') ) {
-            $xml = simplexml_load_file($request_url) or die("url not loading");
-        } else {
-            $curl = curl_init($request_url);
-            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-            $data = curl_exec($request_url);
-            $xml = simplexml_load_string($data);
-        }
-        //print_r($xml);
+        $data = wp_remote_get( $request_url );
+        $xml = wp_remote_retrieve_body( $data );
+        $xml_content = simplexml_load_string( $xml );
+
         $coords['lat'] = $coords['lon'] = '';
-        $coords['status'] = $xml->status ;
+        $coords['status'] = $xml_content->status ;
         if($coords['status']=='OK') {
-            $coords['lat'] = $xml->result->geometry->location->lat ;
-            $coords['lon'] = $xml->result->geometry->location->lng ;
+            $coords['lat'] = $xml_content->result->geometry->location->lat ;
+            $coords['lon'] = $xml_content->result->geometry->location->lng ;
         }
         return $coords;
 	}
