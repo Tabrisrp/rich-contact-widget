@@ -38,6 +38,15 @@ Credits for translation :
 *   You can add more types of the schema.org itemtype to better fit your business with the `rc_schema_types` filter.
 
 # Changelog
+## 1.4.3
+* Bugfix : the KML file didn't have the corresponding coordinates when an address was filled. Replaced custom code  with native wp_remote_get() function
+
+## 1.4.2
+* Compatibility test with WP 3.9 widget customizer
+* Small fixes
+
+## 1.4.1
+* Added German translation (Thanks to Patrick Niemann)
 
 ## 1.4
 * The plugin now creates a kml file and an associated sitemap file
