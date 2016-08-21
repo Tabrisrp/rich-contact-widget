@@ -27,10 +27,6 @@ Feedbacks and suggestions for improvement are greatly appreciated ! You can go t
 
 Rich Contact Widget requires PHP5 to work !
 
-Credits for translation :
-
-* Slovak by <a href="http://webhostinggeeks.com/blog/">WebHostingGeeks.com</a>
-
 == Installation ==
 
 1. Upload the `rich-contact-widget` directory to the `/wp-content/plugins/` directory
