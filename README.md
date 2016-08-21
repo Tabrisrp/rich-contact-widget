@@ -27,9 +27,6 @@ Credits for translation :
 4. Fill the fields to add your contact information
 5. Save
 
-# To Do
-* Generate geo sitemap & KML file for local SEO purpose
-
 # Frequently Asked Questions
 
 ## How to change the output using the filters ?
