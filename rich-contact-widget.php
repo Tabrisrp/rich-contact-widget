@@ -3,7 +3,7 @@
 Plugin Name: Rich Contact Widget
 Plugin URI: http://remyperona.fr/rich-contact-widget/
 Description: A simple contact widget enhanced with microdatas & microformats tags
-Version: 1.4.3
+Version: 1.4.6
 Author: Rémy Perona
 Author URI: http://remyperona.fr
 License: GPL2
@@ -70,7 +70,7 @@ class RP_Geositemap {
                 <name>' . $data['name'] . '</name>
                 <description>' . $data['activity'] . '</description>
                 <Point>
-                  <coordinates>' . $coords['lat'] . ',' . $coords['lon'] . '</coordinates>
+                  <coordinates>' . $coords['lon'] . ',' . $coords['lat'] . '</coordinates>
                 </Point>
               </Placemark>
             </kml>';
@@ -288,7 +288,7 @@ class RC_Widget extends WP_Widget {
 
 		$encoded_map_adress = str_replace( ' ', '+', $map_adress );
             
-    		$widget_output .= '<a href="http://mapof.it/'. $encoded_map_adress . '"><img src="http://maps.googleapis.com/maps/api/staticmap?center=' . $encoded_map_adress . '&amp;zoom=15&amp;size=' . $instance['map_width'] . 'x' . $instance['map_height'] . '&amp;sensor=false&amp;markers=' . $encoded_map_adress . '" alt="' . __('Map for', 'rich_contact-widget') . ' ' . $map_adress . '" width="' . $instance['map_width'] . '" height="' . $instance['map_height'] . '"></a>';
+    		$widget_output .= '<a href="https://google.com/maps/place/'. $encoded_map_adress . '/" target="_blank"><img src="http://maps.googleapis.com/maps/api/staticmap?center=' . $encoded_map_adress . '&amp;zoom=15&amp;size=' . $instance['map_width'] . 'x' . $instance['map_height'] . '&amp;sensor=false&amp;markers=' . $encoded_map_adress . '" alt="' . __('Map for', 'rich_contact-widget') . ' ' . $map_adress . '" width="' . $instance['map_width'] . '" height="' . $instance['map_height'] . '"></a>';
         }
 		$widget_output = apply_filters( 'rc_widget_output', $widget_output, $instance );
 		echo $widget_output;

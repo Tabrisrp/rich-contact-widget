@@ -3,8 +3,8 @@ Contributors: tabrisrp
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=6V74BBTNMWW38&lc=FR&item_name=R%c3%a9my%20Perona&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted
 Tags: microdata, microformats, widget, contact, rich snippets, local seo, hcard, schema.org
 Requires at least: 3.2.1
-Tested up to: 4.2
-Stable tag: 1.4.3
+Tested up to: 4.6
+Stable tag: 1.4.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,15 @@ Credits for translation :
 *   You can add more types of the schema.org itemtype to better fit your business with the `rc_schema_types` filter.
 
 == Changelog ==
+= 1.4.6 =
+* Link to Google Maps opens in a new tab/window
+
+= 1.4.5 =
+* Fix link to Google Maps when the map is displayed
+
+= 1.4.4 =
+* Bugfix : the coordinates in the KML file were in the wrong order
+
 = 1.4.3 =
 * Bugfix : the KML file didn't have the corresponding coordinates when an address was filled. Replaced custom code  with native wp_remote_get() function
 
