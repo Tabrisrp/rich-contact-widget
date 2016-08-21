@@ -38,6 +38,15 @@ Credits for translation :
 *   You can add more types of the schema.org itemtype to better fit your business with the `rc_schema_types` filter.
 
 # Changelog
+## 1.4.6
+* Link to Google Maps opens in a new tab/window
+
+##1.4.5
+* Fix link to Google Maps when the map is displayed
+
+##1.4.4
+* Bugfix : the coordinates in the KML file were in the wrong order
+
 ## 1.4.3
 * Bugfix : the KML file didn't have the corresponding coordinates when an address was filled. Replaced custom code  with native wp_remote_get() function
 
